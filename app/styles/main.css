@@ -1,0 +1,17 @@
+body{
+  text-align: center;
+}
+
+.fieldValid{
+  color: green;
+}
+.fieldInvalid{
+  color: red;
+}
+
+.picturesOuterContainer{
+  margin:20px;
+}
+.picturesInnerContainer{
+  height:300px;
+}

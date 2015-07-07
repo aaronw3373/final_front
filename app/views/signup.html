@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-6 col-xs-offset-3 col-md-4 col-md-offset-4">
+      <form name="signupForm">
+        <input type='text' ng-model="signupCtrl.signup.username" ng-minlength="4" ng-maxlength="20" ng-class="signupCtrl.getCSS(signupForm.username)" name='username' placeholder='Username' required/>
+        <br>
+        <div ng-show="!signupForm.username.$pristine && signupForm.username.$invalid">You must enter a valid username.</div>
+        <input type='password' ng-model="signupCtrl.signup.password" ng-minlength="6" ng-maxlength="20" ng-class="signupCtrl.getCSS(signupForm.password)" name='password' placeholder='Password' required/>
+        <br>
+        <div ng-show="!signupForm.password.$pristine && signupForm.password.$invalid">You must enter a valid password.</div>
+        <input type='text' ng-model="signupCtrl.signup.email" ng-minlength="5" ng-maxlength="60" ng-pattern="/\S+@\S+\.\S+/"  ng-class="signupCtrl.getCSS(signupForm.email)" name='email' placeholder='Email' required/>
+        <br>
+        <div ng-show="!signupForm.email.$pristine && signupForm.email.$invalid">You must enter a valid email.</div>
+        <input type='text' ng-model="signupCtrl.signup.firstName" ng-minlength="3" ng-maxlength="20" ng-class="signupCtrl.getCSS(signupForm.firstName)" name='firstName' placeholder='First Name' required/>
+        <br>
+        <div ng-show="!signupForm.firstName.$pristine && signupForm.firstName.$invalid">You must enter a valid first name.</div>
+        <input type='text' ng-model="signupCtrl.signup.lastName" ng-minlength="3" ng-maxlength="20" ng-class="signupCtrl.getCSS(signupForm.lastName)" name='lastName' placeholder='Last Name' required/>
+        <br>
+        <div ng-show="!signupForm.lastName.$pristine && signupForm.lastName.$invalid">You must enter a valid last name.</div>
+        <button type='submit' ng-click="signupCtrl.postSignup()"> Signup
+        </button>
+      </form>
+      <div ng-model="signupCtrl.message">{{signupCtrl.message}}</div>
+      <a href="/#/">Back to Login</a>
+    </div>
+  </div>
+</div>
