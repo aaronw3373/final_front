@@ -1,7 +1,6 @@
 (function signupFactoryIIFE(){
 
-  // Create a customers factory
-  var signupFactory = function($http, appSettings){
+  var signupFactory = function($http, appSettings, $location){
     var factory = {};
 
     factory.postsignup = function(data){
@@ -14,7 +13,7 @@
     return factory;
   };
 
-  signupFactory.$inject = ['$http', 'appSettings'];
+  signupFactory.$inject = ['$http', 'appSettings', '$location'];
 
   angular.module('finalApp').factory('signupFactory', signupFactory);
 })();

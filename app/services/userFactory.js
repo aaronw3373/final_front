@@ -1,7 +1,7 @@
 (function userFactoryIIFE(){
 
-  // Create a customers factory
-  var userFactory = function($http, $location, appSettings, $timeout){
+  // Create a user factory
+  var userFactory = function($http, $location, appSettings){
     var factory = {};
     factory.user = {};
 
@@ -28,7 +28,7 @@
     return factory;
   };
 
-  userFactory.$inject = ['$http', '$location', 'appSettings', '$timeout'];
+  userFactory.$inject = ['$http', '$location', 'appSettings'];
 
   angular.module('finalApp').factory('userFactory', userFactory);
 })();

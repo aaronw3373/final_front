@@ -1,6 +1,5 @@
 (function loginFactoryIIFE(){
 
-  // Create a customers factory
   var loginFactory = function($http, $location, appSettings){
     var factory = {};
 
