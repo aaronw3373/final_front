@@ -1,5 +1,10 @@
 body{
-  text-align: center;
+  /*text-align: center;*/
+}
+.container, .row{
+  margin: 0;
+  padding: 0;
+  width: 100%;
 }
 
 .fieldValid{
@@ -9,9 +14,95 @@ body{
   color: red;
 }
 
+.home_backgound{
+  text-align: left;
+  margin:0;
+  padding: 0;
+  position:fixed;
+  z-index:-100000;
+  height:100vh;
+  width:100%;
+  background-size: cover;
+}
+
+.name_title{
+  padding-left: 10px;
+  font-size: 40px;
+}
+
+.search_container{
+  float: right;
+  padding-top: 25px;
+  padding-right: 30px;
+}
+.search_container .search_box{
+  width: 250px;
+}
+
+/*Profile styles*/
+.profile_square{
+  height: 300px;
+  width: 300px;
+}
+.picture_overlay{
+  padding-top: 209px;
+}
+.picture_overlay ul{
+  background-color:rgba(0, 0, 0, 0.6);
+  height: 81px;
+  padding: 0;
+  margin-bottom:0;
+}
+.picture_overlay li{
+  list-style-type:none;
+}
+.picture_overlay button {
+  background:transparent;
+  border: 0;
+  color: white;
+}
+.picture_overlay .pad_right{
+  padding: 0;
+  padding-right: 10px;
+}
+.picture_overlay .pad_left{
+  padding: 0;
+  padding-left: 10px;
+  font-size: 17px;
+}
+.picture_overlay .pad_right button{
+  font-size: 40px;
+  padding-top: 20px;
+  padding-right: 18px;
+  float: right;
+}
+.profile_image{
+  border: 2px solid white;
+  height: 300px;
+  width: 300px;
+  position: absolute;
+  z-index: -100;
+  text-align: left;
+}
+
+.links{
+  width: 300px;
+  /*padding: 10px;*/
+}
+.links button{
+  padding:10px;
+  background-color:rgba(0, 0, 0, 0.6);
+  border: 0;
+  font-size: 17px;
+  color: white;
+}
+
+
 .picturesOuterContainer{
+  width: 320px;
   margin:20px;
 }
 .picturesInnerContainer{
-  height:300px;
+  height: 200px;
+  border: 2px solid white;
 }
