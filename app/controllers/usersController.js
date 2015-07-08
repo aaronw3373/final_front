@@ -3,6 +3,10 @@
   var usersController = function(usersFactory, appSettings){
     this.users = usersFactory.users;
     this.user = usersFactory.user;
+
+    this.display = function(){
+      return usersFactory.display;
+    }
   };
 
  usersController.$inject = ['usersFactory', 'appSettings'];

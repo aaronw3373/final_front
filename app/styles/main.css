@@ -7,6 +7,8 @@ body{
   width: 100%;
 }
 
+
+
 .fieldValid{
   color: green;
 }
@@ -19,17 +21,6 @@ body{
 }
 .displayInline{
   display: Inline;
-}
-
-.home_backgound{
-  text-align: left;
-  margin:0;
-  padding: 0;
-  position:fixed;
-  z-index:-100000;
-  height:100vh;
-  width:100%;
-  background-size: cover;
 }
 
 .name_title{
@@ -46,6 +37,16 @@ body{
   width: 250px;
 }
 
+
+.user_sidebar{
+  float: left;
+  width: 300px;
+  margin: 20px;
+}
+.content_container{
+  float: left;
+  width: calc(100vw - 340px);
+}
 /*Profile styles*/
 .profile_square{
   height: 300px;
@@ -75,7 +76,7 @@ body{
 .picture_overlay .pad_left{
   padding: 0;
   padding-left: 10px;
-  font-size: 17px;
+  font-size: 24px;
 }
 .picture_overlay .pad_right button{
   font-size: 40px;
@@ -120,7 +121,6 @@ body{
 
 .links{
   width: 300px;
-  /*padding: 10px;*/
 }
 .links button{
   padding:10px;
