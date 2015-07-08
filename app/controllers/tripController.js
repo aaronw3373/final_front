@@ -26,6 +26,7 @@
     }
 
     this.newTrip = function(){
+      console.log("new");
       if(this.newTrip.title && this.newTrip.info && this.newTrip.startDate && this.newTrip.endDate && this.newTrip.location&& this.newTrip.people){
         tripFactory.newTrip(this.newTrip);
       } else {
