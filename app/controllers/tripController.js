@@ -9,13 +9,20 @@
     this.newTrip.startDate = undefined;
     this.newTrip.endDate = undefined;
     this.newTrip.location = undefined;
-    this.newTrip.people = undefined;
+    this.newTrip.people = tripFactory.newTripPeople;
+    this.newTrip.person = undefined;
 
     this.getTrips = function(){
      tripFactory.getTrips();
     }
     this.getTrip = function(){
      tripFactory.getTrip();
+    }
+
+    this.findPerson = function(){
+      if (this.newTrip.person){
+        tripFactory.findPerson(this.newTrip.person);
+      }
     }
 
     this.newTrip = function(){

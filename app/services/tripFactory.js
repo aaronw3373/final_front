@@ -5,6 +5,7 @@
     var factory = {};
     factory.trips = [];
     factory.trip = {};
+    factory.newTripPeople = [];
 
 
     factory.getTrips = function(){
@@ -24,6 +25,14 @@
     factory.getTrip = function(){
 
       // angular.copy(res, factory.trip);
+    }
+
+    factory.findPerson = function(search){
+      console.log(search);
+      // var url = appSettings.url + '/search/newTrip';
+      // return  $http.post(url, trip).success(function(res){
+      //   console.log(res);
+      // });
     }
 
     factory.newTrip = function(trip){

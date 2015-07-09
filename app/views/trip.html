@@ -26,6 +26,15 @@
         <br>
         <div ng-show="!newTripForm.location.$pristine && newTripForm.location.$invalid">You must enter a valid Location.</div>
 
+        People:
+        <input type='text' ng-model="tripCtrl.newTrip.people" ng-maxlength="1024" ng-class="tripCtrl.getCSS(newTripForm.people)" name='people' location/>
+        <br>
+        <input type='text' ng-model="tripCtrl.newTrip.person" ng-minlength="3" ng-maxlength="128" ng-class="tripCtrl.getCSS(newTripForm.person)" name='person' placeholder='Add Person'/>
+        <button type='submit' ng-click="tripCtrl.findPerson()"> Find Person
+        </button>
+        <br>
+        <div ng-show="!newTripForm.location.$pristine && newTripForm.location.$invalid">You must enter a valid Person.</div>
+
         <button type='submit' ng-click="tripCtrl.newTrip()"> Create Trip
         </button>
       </form>
