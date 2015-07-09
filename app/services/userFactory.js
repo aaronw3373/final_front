@@ -28,7 +28,7 @@
     return factory;
   };
 
-  userFactory.$inject = ['$http', '$location', 'appSettings'];
+  userFactory.$inject = ['$http', '$location', 'appSettings', 'tripFactory', 'usersFactory'];
 
   angular.module('finalApp').factory('userFactory', userFactory);
 })();

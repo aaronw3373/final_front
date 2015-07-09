@@ -1,0 +1,28 @@
+<div class="row" ng-class="tripCtrl.displayTrips()">
+  <div class="col-xs-12">
+
+    <div class="row">
+        <h1>{{tripCtrl.trip.title}}</h1>
+        <h2>{{tripCtrl.trip.location}}</h2>
+        <h3>{{tripCtrl.trip.info}}</h3>
+        <h2>{{tripCtrl.trip.startDate | date :"MMM d,yyyy 'at' h:mma"}}</h2>
+        <h2>{{tripCtrl.trip.endDate | date :"MMM d,yyyy 'at' h:mma"}}</h2>
+        <div ng-repeat="person in tripCtrl.trip.people">
+            <h3>{{person}}</h3>
+        </div>
+    </div>
+    <div class="row">
+        <button ng-click="tripCtrl.getTrips()">
+          Get Trips
+        </button>
+    </div>
+    <div class="row">
+        <div ng-repeat="trip in  tripCtrl.trips">
+            <button ng-click="tripCtrl.getTrip(trip._id)">
+                <h3>{{trip.title}}</h3>
+            </button>
+        </div>
+    </div>
+
+  </div>
+</div>

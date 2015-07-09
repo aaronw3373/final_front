@@ -6,6 +6,21 @@
     factory.trips = [];
     factory.trip = {};
     factory.newTripPeople = [];
+    factory.displayTrip = "displayNone";
+    factory.displayTrips = "displayNone";
+
+    // factory.hideAll = function(){
+    //   factory.displayTrip = "displayNone";
+    //   factory.displayTrips = "displayNone";
+    // }
+    factory.show = function(){
+      factory.displayTrips = "displayNone";
+      factory.displayTrip = "displayInline";
+    }
+    factory.showMyTrips = function(){
+      factory.displayTrip = "displayNone";
+      factory.displayTrips = "displayInline";
+    }
 
 
     factory.getTrips = function(){
@@ -59,6 +74,8 @@
            $location.path('/');
         } else {
           angular.copy(res, factory.trip);
+          factory.displayTrip = "displayNone";
+          factory.displayTrips = "displayInline";
         }
       }).error(function(err){
           $location.path('/');
@@ -69,7 +86,7 @@
     return factory;
   };
 
-  tripFactory.$inject = ['$http', '$location', 'appSettings'];
+  tripFactory.$inject = ['$http', '$location', 'appSettings', 'usersFactory'];
 
   angular.module('finalApp').factory('tripFactory', tripFactory);
 })();

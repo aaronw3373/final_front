@@ -35,7 +35,7 @@
             <div class="col-xs-6 pad_right">
                 <ul>
                   <li>
-                    <button class='fa fa-gear' type='submit' ng-click="userCtrl.getSettingsPage()"></button>
+                    <button class='fa fa-gear' type='submit' ng-click="userCtrl.showSettings()"></button>
                   </li>
                 </ul>
             </div>
@@ -43,6 +43,25 @@
         </div>
       </div>
       <div class="links">
+        <button class="col-xs-6" type='submit' ng-click="userCtrl.showPictures()">
+          All Pictures
+        </button>
+        <button class="col-xs-6" type='submit' ng-click="userCtrl.showMessages()">
+          Messages
+        </button>
+      </div>
+      <div class="links">
+        <button class="col-xs-6" type='submit' ng-click="userCtrl.getFriends()">
+          Friends
+        </button>
+        <button class="col-xs-6" type='submit' ng-click="userCtrl.getFollowers()">
+          Followers
+        </button>
+      </div>
+      <div class="links">
+         <button class="col-xs-12" type='submit' ng-click="userCtrl.getAllUsers()">
+          All Users
+        </button>
         <button class="links" type='submit' ng-click="userCtrl.logout()">
           Logout
         </button>
@@ -50,7 +69,11 @@
     </div>
     <div class="content_container">
       <user-list></user-list>
+      <messages></messages>
+      <pictureList></pictureList>
+      <settings></settings>
       <trip></trip>
+      <trips></trips>
     </div>
   </div>
 </div>

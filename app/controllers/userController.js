@@ -1,6 +1,6 @@
 (function userControllerIIFE(){
 
-  var userController = function(userFactory, appSettings, usersFactory){
+  var userController = function(userFactory, appSettings, usersFactory, tripFactory, messageFactory, pictureFactory, settingsFactory){
     this.user = userFactory.user;
 
     function init(){
@@ -8,12 +8,11 @@
     }
     init();
 
-    this.displayNone = function(){
-      return "displayNone";
-    }
-
     this.showPictures = function(){
       pictureFactory.getPictures();
+    }
+    this.showMessages = function(){
+      messageFactory.getMessages();
     }
     this.getAllUsers = function(){
       usersFactory.getUsers();
@@ -24,6 +23,15 @@
     this.getFollowers = function(){
       usersFactory.getFollowers();
     };
+    this.postNewTrip = function(){
+      tripFactory.show()
+    }
+    this.getMyTrips = function(){
+      tripFactory.showMyTrips()
+    }
+    this.showSettings = function(){
+      settingsFactory.showSettings();
+    }
 
 
     this.logout = function(){
@@ -32,7 +40,7 @@
 
   };
 
- userController.$inject = ['userFactory', 'appSettings', 'usersFactory'];
+ userController.$inject = ['userFactory', 'appSettings', 'usersFactory', 'tripFactory', 'messageFactory', 'pictureFactory','settingsFactory'];
 
  // The Controller is part of the module.
  angular.module('finalApp').controller('userController', userController);

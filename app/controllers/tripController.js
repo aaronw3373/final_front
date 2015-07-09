@@ -41,6 +41,13 @@
       return inputFieldValue.$valid ? "fieldValid" : "fieldInvalid";
     };
 
+    this.displayTrip = function(){
+      return tripFactory.displayTrip;
+    }
+    this.displayTrips = function(){
+      return tripFactory.displayTrips;
+    }
+
   };
 
  tripController.$inject = ['tripFactory', 'appSettings'];
