@@ -20,7 +20,7 @@ body{
   display: none;
 }
 .displayInline{
-  display: Inline;
+  display: inline;
 }
 
 .name_title{
@@ -41,10 +41,11 @@ body{
 .user_sidebar{
   float: left;
   width: 300px;
-  margin: 20px;
+  padding: 20px;
 }
 .content_container{
-  float: left;
+  float: right;
+  padding: 20px;
   width: calc(100vw - 340px);
 }
 /*Profile styles*/
@@ -130,6 +131,9 @@ body{
   color: white;
 }
 
+.picturesContainer{
+
+}
 
 .picturesOuterContainer{
   width: 320px;

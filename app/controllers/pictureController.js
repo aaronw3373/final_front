@@ -4,7 +4,8 @@
     this.picture = pictureFactory.picture;
     this.pictures = pictureFactory.pictures;
 
-    this.display = function(){
+    this.displayPics = function(){
+      console.log(pictureFactory.display);
       return pictureFactory.display;
     }
 
