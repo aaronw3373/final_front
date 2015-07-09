@@ -1,5 +1,5 @@
 angular.module("finalApp").value('appSettings', {
-  title: "Social Network",
+  title: "Powder Planner",
   version: "1.0",
   url: "http://localhost:3050"
 });

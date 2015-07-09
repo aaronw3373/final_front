@@ -24,7 +24,7 @@
       usersFactory.getFollowers();
     };
     this.postNewTrip = function(){
-      tripFactory.show()
+      tripFactory.show();
     }
     this.getMyTrips = function(){
       tripFactory.getTrips()

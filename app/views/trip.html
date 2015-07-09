@@ -34,16 +34,18 @@
             <div ng-repeat="person in tripCtrl.newTrip.people">
                 {{person}}
             </div>
-            <input type='text' ng-model="tripCtrl.person" ng-minlength="3" ng-maxlength="128" ng-class="tripCtrl.getCSS(newTripForm.person)" name='person' placeholder='Add Person'/>
-            <button type='submit' ng-click="tripCtrl.findPerson()"> Add Person
-            </button>
-            <br>
-            <div ng-show="!newTripForm.person.$pristine && newTripForm.person.$invalid">You must enter a valid Person.</div>
         </div>
         <div class="col-xs-12">
             <button type='submit' ng-click="tripCtrl.postTrip()"> Create Trip
             </button>
         </div>
+      </form>
+      <form name="newPersonForm" class="newTripForm">
+        <input type='text' ng-model="tripCtrl.person" ng-minlength="3" ng-maxlength="128" ng-class="tripCtrl.getCSS(newPersonForm.person)" name='person' placeholder='Add Person'/>
+        <button type='submit' ng-click="tripCtrl.findPerson()"> Add Person
+        </button>
+        <br>
+        <div ng-show="!newPersonForm.person.$pristine && newPersonForm.person.$invalid">You must enter a valid Person.</div>
       </form>
       <div ng-model="tripCtrl.message">{{tripCtrl.message}}</div>
     </div>

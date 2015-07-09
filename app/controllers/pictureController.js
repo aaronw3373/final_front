@@ -5,7 +5,7 @@
     this.pictures = pictureFactory.pictures;
 
     this.displayPics = function(){
-      console.log(pictureFactory.display);
+      console.log("test");
       return pictureFactory.display;
     }
 
