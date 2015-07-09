@@ -27,7 +27,7 @@
       tripFactory.show()
     }
     this.getMyTrips = function(){
-      tripFactory.showMyTrips()
+      tripFactory.getTrips()
     }
     this.showSettings = function(){
       settingsFactory.showSettings();

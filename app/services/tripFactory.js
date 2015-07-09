@@ -17,11 +17,6 @@
       factory.displayTrips = "displayNone";
       factory.displayTrip = "displayInline";
     }
-    factory.showMyTrips = function(){
-      factory.displayTrip = "displayNone";
-      factory.displayTrips = "displayInline";
-    }
-
 
     factory.getTrips = function(){
       var url = appSettings.url + '/trip/all';
@@ -30,6 +25,8 @@
            $location.path('/');
         } else {
           angular.copy(res, factory.trips);
+          factory.displayTrip = "displayNone";
+      factory.displayTrips = "displayInline";
         }
       }).error(function(err){
           $location.path('/');

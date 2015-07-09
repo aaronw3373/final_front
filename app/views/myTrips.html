@@ -11,11 +11,7 @@
             <h3>{{person}}</h3>
         </div>
     </div>
-    <div class="row">
-        <button ng-click="tripCtrl.getTrips()">
-          Get Trips
-        </button>
-    </div>
+
     <div class="row">
         <div ng-repeat="trip in  tripCtrl.trips">
             <button ng-click="tripCtrl.getTrip(trip._id)">
