@@ -36,10 +36,11 @@
     }
 
     factory.newTrip = function(trip){
-      var url = appSettings.url + '/trip/new';
-      return  $http.post(url, trip).success(function(res){
-        console.log(res);
-      });
+      console.log(trip);
+      // var url = appSettings.url + '/trip/new';
+      // return  $http.post(url, trip).success(function(res){
+      //   console.log(res);
+      // });
     }
 
     return factory;
