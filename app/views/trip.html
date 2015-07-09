@@ -1,43 +1,74 @@
 <div class="row">
   <div class="col-xs-12">
 
-    <div>
+    <div class="row">
       <h1>New Trip</h1>
-      <form name="newTripForm">
-        <input type='text' ng-model="tripCtrl.newTrip.title" ng-minlength="3" ng-maxlength="64" ng-class="tripCtrl.getCSS(newTripForm.title)" name='title' placeholder='Title' required/>
-        <br>
-        <div ng-show="!newTripForm.title.$pristine && newTripForm.title.$invalid">You must enter a valid Title.</div>
+      <form name="newTripForm" class="newTripForm">
+        <div class="col-xs-12 col-lg-4">
+            <input type='text' ng-model="tripCtrl.newTrip.title" ng-minlength="3" ng-maxlength="64" ng-class="tripCtrl.getCSS(newTripForm.title)" name='title' placeholder='Title' required/>
+            <br>
+            <div ng-show="!newTripForm.title.$pristine && newTripForm.title.$invalid">You must enter a valid Title.</div>
 
-        <input type='text' ng-model="tripCtrl.newTrip.info" ng-minlength="3" ng-maxlength="512" ng-class="tripCtrl.getCSS(newTripForm.info)" name='info' placeholder='Info' required/>
-        <br>
-        <div ng-show="!newTripForm.info.$pristine && newTripForm.info.$invalid">You must enter valid Info.</div>
+            <input type='text' ng-model="tripCtrl.newTrip.info" ng-minlength="3" ng-maxlength="512" ng-class="tripCtrl.getCSS(newTripForm.info)" name='info' placeholder='Info' required/>
+            <br>
+            <div ng-show="!newTripForm.info.$pristine && newTripForm.info.$invalid">You must enter valid Info.</div>
 
-        Start Date:<br>
-        <input type='date' ng-model="tripCtrl.newTrip.startDate" ng-class="tripCtrl.getCSS(newTripForm.startDate)" name='startDate' required/>
-        <br>
-        <div ng-show="!newTripForm.startDate.$pristine && newTripForm.startDate.$invalid">You must enter a valid Start Date.</div>
+            <input type='text' ng-model="tripCtrl.newTrip.location" ng-minlength="2" ng-maxlength="128" ng-class="tripCtrl.getCSS(newTripForm.location)" name='location' placeholder='Location' required/>
+            <br>
+            <div ng-show="!newTripForm.location.$pristine && newTripForm.location.$invalid">You must enter a valid Location.</div>
+        </div>
+        <div class="col-xs-12 col-lg-4">
+            Start Date:<br>
+            <input type='datetime-local' ng-model="tripCtrl.newTrip.startDate" ng-class="tripCtrl.getCSS(newTripForm.startDate)" name='startDate' required/>
+            <br>
+            <div ng-show="!newTripForm.startDate.$pristine && newTripForm.startDate.$invalid">You must enter a valid Start Date.</div>
 
-        End Date:<br>
-        <input type='date' ng-model="tripCtrl.newTrip.endDate" ng-class="tripCtrl.getCSS(newTripForm.endDate)" name='endDate' required/>
-        <br>
-        <div ng-show="!newTripForm.endDate.$pristine && newTripForm.endDate.$invalid">You must enter a valid End Date.</div>
+            End Date:<br>
+            <input type='datetime-local' ng-model="tripCtrl.newTrip.endDate" ng-class="tripCtrl.getCSS(newTripForm.endDate)" name='endDate' required/>
+            <br>
+            <div ng-show="!newTripForm.endDate.$pristine && newTripForm.endDate.$invalid">You must enter a valid End Date.</div>
+        </div>
 
-        <input type='text' ng-model="tripCtrl.newTrip.location" ng-minlength="3" ng-maxlength="128" ng-class="tripCtrl.getCSS(newTripForm.location)" name='location' placeholder='Location' required/>
-        <br>
-        <div ng-show="!newTripForm.location.$pristine && newTripForm.location.$invalid">You must enter a valid Location.</div>
-
-        People:
-        <input type='text' ng-model="tripCtrl.newTrip.people" ng-maxlength="1024" ng-class="tripCtrl.getCSS(newTripForm.people)" name='people' location/>
-        <br>
-        <input type='text' ng-model="tripCtrl.newTrip.person" ng-minlength="3" ng-maxlength="128" ng-class="tripCtrl.getCSS(newTripForm.person)" name='person' placeholder='Add Person'/>
-        <button type='submit' ng-click="tripCtrl.findPerson()"> Find Person
-        </button>
-        <br>
-        <div ng-show="!newTripForm.location.$pristine && newTripForm.location.$invalid">You must enter a valid Person.</div>
-
-        <button type='submit' ng-click="tripCtrl.newTrip()"> Create Trip
-        </button>
+        <div class="col-xs-12 col-lg-4">
+            People:
+            <div ng-repeat="person in tripCtrl.newTrip.people">
+                {{person}}
+            </div>
+            <input type='text' ng-model="tripCtrl.person" ng-minlength="3" ng-maxlength="128" ng-class="tripCtrl.getCSS(newTripForm.person)" name='person' placeholder='Add Person'/>
+            <button type='submit' ng-click="tripCtrl.findPerson()"> Add Person
+            </button>
+            <br>
+            <div ng-show="!newTripForm.person.$pristine && newTripForm.person.$invalid">You must enter a valid Person.</div>
+        </div>
+        <div class="col-xs-12">
+            <button type='submit' ng-click="tripCtrl.postTrip()"> Create Trip
+            </button>
+        </div>
       </form>
+      <div ng-model="tripCtrl.message">{{tripCtrl.message}}</div>
+    </div>
+
+    <div class="row">
+        <h1>{{tripCtrl.trip.title}}</h1>
+        <h2>{{tripCtrl.trip.location}}</h2>
+        <h3>{{tripCtrl.trip.info}}</h3>
+        <h2>{{tripCtrl.trip.startDate | date :"MMM d,yyyy 'at' h:mma"}}</h2>
+        <h2>{{tripCtrl.trip.endDate | date :"MMM d,yyyy 'at' h:mma"}}</h2>
+        <div ng-repeat="person in tripCtrl.trip.people">
+            <h3>{{person}}</h3>
+        </div>
+    </div>
+    <div class="row">
+        <button ng-click="tripCtrl.getTrips()">
+          Get Trips
+        </button>
+    </div>
+    <div class="row">
+        <div ng-repeat="trip in  tripCtrl.trips">
+            <button ng-click="tripCtrl.getTrip(trip._id)">
+                <h3>{{trip.title}}</h3>
+            </button>
+        </div>
     </div>
 
   </div>

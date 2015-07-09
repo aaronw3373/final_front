@@ -10,23 +10,23 @@
     this.newTrip.endDate = undefined;
     this.newTrip.location = undefined;
     this.newTrip.people = tripFactory.newTripPeople;
-    this.newTrip.person = undefined;
+    this.person = undefined;
+    this.message = undefined;
 
     this.getTrips = function(){
      tripFactory.getTrips();
-    }
-    this.getTrip = function(){
-     tripFactory.getTrip();
-    }
+    };
+    this.getTrip = function(id){
+     tripFactory.getTrip(id);
+    };
 
     this.findPerson = function(){
-      if (this.newTrip.person){
-        tripFactory.findPerson(this.newTrip.person);
+      if (this.person){
+        tripFactory.findPerson(this.person);
       }
-    }
+    };
 
-    this.newTrip = function(){
-      console.log("new");
+    this.postTrip = function(){
       if(this.newTrip.title && this.newTrip.info && this.newTrip.startDate && this.newTrip.endDate && this.newTrip.location&& this.newTrip.people){
         tripFactory.newTrip(this.newTrip);
       } else {
@@ -35,20 +35,16 @@
     };
 
     this.getCSS = function(inputFieldValue){
-      // $pristine - field has not been changed
       if (inputFieldValue.$pristine){
         return "";
       }
-
-      // valid will be true if the field is the field is valid
       return inputFieldValue.$valid ? "fieldValid" : "fieldInvalid";
     };
 
-  }
+  };
 
  tripController.$inject = ['tripFactory', 'appSettings'];
 
- // The Controller is part of the module.
  angular.module('finalApp').controller('tripController', tripController);
 
 })();
