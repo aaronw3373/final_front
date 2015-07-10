@@ -4,7 +4,6 @@
     this.display = function(){
       return settingsFactory.display;
     }
-
   };
 
  settingsController.$inject = ['settingsFactory', 'appSettings'];

@@ -3,6 +3,7 @@
   var userController = function(userFactory, appSettings, usersFactory, tripFactory, messageFactory, pictureFactory, settingsFactory){
     this.user = userFactory.user;
 
+
     function init(){
       userFactory.getUser();
     }
@@ -32,7 +33,6 @@
     this.showSettings = function(){
       settingsFactory.showSettings();
     }
-
 
     this.logout = function(){
       userFactory.logout();

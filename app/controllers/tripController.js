@@ -12,6 +12,12 @@
     this.newTrip.people = tripFactory.newTripPeople;
     this.person = undefined;
     this.message = undefined;
+    this.displayTrip = function(){
+      return tripFactory.displayTrip;
+    }
+    this.displayTrips = function(){
+      return tripFactory.displayTrips;
+    }
 
     this.getTrips = function(){
      tripFactory.getTrips();
@@ -40,13 +46,6 @@
       }
       return inputFieldValue.$valid ? "fieldValid" : "fieldInvalid";
     };
-
-    this.displayTrip = function(){
-      return tripFactory.displayTrip;
-    }
-    this.displayTrips = function(){
-      return tripFactory.displayTrips;
-    }
 
   };
 

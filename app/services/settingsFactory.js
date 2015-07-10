@@ -5,7 +5,7 @@
     factory.display = "displayNone";
 
     factory.showSettings = function(){
-      console.log("Settings");
+      factory.display = "displayInline";
     }
     return factory;
   };

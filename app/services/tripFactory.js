@@ -9,10 +9,6 @@
     factory.displayTrip = "displayNone";
     factory.displayTrips = "displayNone";
 
-    // factory.hideAll = function(){
-    //   factory.displayTrip = "displayNone";
-    //   factory.displayTrips = "displayNone";
-    // }
     factory.show = function(){
       factory.displayTrips = "displayNone";
       factory.displayTrip = "displayInline";
@@ -26,7 +22,7 @@
         } else {
           angular.copy(res, factory.trips);
           factory.displayTrip = "displayNone";
-      factory.displayTrips = "displayInline";
+          factory.displayTrips = "displayInline";
         }
       }).error(function(err){
           $location.path('/');
@@ -53,7 +49,7 @@
             var repeat = false;
             factory.newTripPeople.forEach(function(username){
               if (username === res){
-                repeat = true
+                repeat = true;
               }
             })
             if (!repeat){

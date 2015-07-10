@@ -67,17 +67,30 @@
         </button>
       </div>
 
+
       <div class="links">
         <form class='photoUpload' method="post" enctype="multipart/form-data" action="http://localhost:3050/picture/upload">
           <input class='form-control' type="file" name="thumbnail"/>
-          <input class='form-control' type="text" name="caption" placeholder='Caption'/>
           <button class="col-xs-12" type='submit'> Upload Picture</button>
         </form>
       </div>
-      <div>
-      </div>
-      <div>
-      </div>
+
+
+<!-- <div ng-controller="pictureController as pictureCtrl" class="row links">
+  <form class='photoUpload' name="uploadPictureForm" novalidate>
+    <div>
+        <label>Caption</label>
+        <input type="text" class="form-control" ng-model="pictureCtrl.newPic.caption">
+    </div>
+    <div>
+        <label>File</label>
+        <input type="file" ng-file-select ng-model="pictureCtrl.newPic.image">
+    </div>
+    <br>
+    <button class="btn btn-default" ng-click='pictureCtrl.createPicture(pictureCtrl.newPic)'>Submit</button>
+  </form>
+</div> -->
+
 
     </div>
     <div class="content_container">

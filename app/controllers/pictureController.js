@@ -3,9 +3,8 @@
   var pictureController = function(pictureFactory, appSettings){
     this.picture = pictureFactory.picture;
     this.pictures = pictureFactory.pictures;
-
+    this.newPic = {};
     this.displayPics = function(){
-      console.log("test");
       return pictureFactory.display;
     }
 
@@ -16,7 +15,9 @@
     this.makeProfilePicture = function(src){
       pictureFactory.makeProfilePicture(src);
     }
-
+    this.createPicture = function(picture) {
+      pictureFactory.createPicture(picture);
+    };
   };
 
  pictureController.$inject = ['pictureFactory', 'appSettings'];

@@ -3,7 +3,6 @@
   var messageController = function(messageFactory, appSettings){
     this.message = messageFactory.message;
     this.messages = messageFactory.messages;
-
     this.display = function(){
       return messageFactory.display;
     }
