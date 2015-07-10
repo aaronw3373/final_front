@@ -20,6 +20,13 @@
       });
     };
 
+    factory.makeProfilePicture = function(src){
+      var url = appSettings.url + '/user/makeProfilePicture/' + src;
+      return $http.get(url).success(function(res){
+        $location.path('/home');
+      });
+    }
+
     return factory;
   };
 

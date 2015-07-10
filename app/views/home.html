@@ -16,7 +16,7 @@
     <div class="user_sidebar">
       <div class="profile_square">
         <div>
-          <img class="profile_image" ng-src="https://s3-us-west-2.amazonaws.com/clarkedbteer/{{userCtrl.user.profilePicture}}"
+          <img class="profile_image" ng-src="https://s3.amazonaws.com/powplanner/{{userCtrl.user.profilePicture}}"
           />
           <div class="picture_overlay">
             <div class="col-xs-6 pad_left">
@@ -66,6 +66,19 @@
           Logout
         </button>
       </div>
+
+      <div class="links">
+        <form class='photoUpload' method="post" enctype="multipart/form-data" action="http://localhost:3050/picture/upload">
+          <input class='form-control' type="file" name="thumbnail"/>
+          <input class='form-control' type="text" name="caption" placeholder='Caption'/>
+          <button class="col-xs-12" type='submit'> Upload Picture</button>
+        </form>
+      </div>
+      <div>
+      </div>
+      <div>
+      </div>
+
     </div>
     <div class="content_container">
       <trip></trip>

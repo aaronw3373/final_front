@@ -13,6 +13,10 @@
       pictureFactory.getPicture(picture);
     }
 
+    this.makeProfilePicture = function(src){
+      pictureFactory.makeProfilePicture(src);
+    }
+
   };
 
  pictureController.$inject = ['pictureFactory', 'appSettings'];

@@ -19,7 +19,6 @@
         <div ng-show="!signupForm.lastName.$pristine && signupForm.lastName.$invalid">You must enter a valid last name.</div>
         <button type='submit' ng-click="signupCtrl.postSignup()"> Signup
         </button>
-        <p>{{signupCtrl.signup}}</p>
       </form>
       <div ng-model="signupCtrl.message">{{signupCtrl.message}}</div>
       <a href="/#/">Back to Login</a>
