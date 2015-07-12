@@ -165,3 +165,16 @@ body{
 .newTripForm{
   font-size: 18px;
 }
+.trips{
+  padding:10px;
+  background-color:rgba(0, 0, 0, 0.6);
+  border: 0;
+  font-size: 17px;
+  color: white;
+}
+.trips button{
+  color: white;
+}
+#follow_button{
+ font-size: 32px;
+}

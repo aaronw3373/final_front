@@ -43,14 +43,6 @@
         </div>
       </div>
       <div class="links">
-        <button class="col-xs-6" type='submit' ng-click="userCtrl.showPictures()">
-          All Pictures
-        </button>
-        <button class="col-xs-6" type='submit' ng-click="userCtrl.showMessages()">
-          Messages
-        </button>
-      </div>
-      <div class="links">
         <button class="col-xs-6" type='submit' ng-click="userCtrl.getFriends()">
           Friends
         </button>
@@ -59,22 +51,56 @@
         </button>
       </div>
       <div class="links">
+        <button class="col-xs-6" type='submit' ng-click="userCtrl.showPictures()">
+          Pictures
+        </button>
+        <button class="col-xs-6" type='submit' ng-click="userCtrl.showMessages()">
+          Messages
+        </button>
+      </div>
+      <div class="links">
          <button class="col-xs-12" type='submit' ng-click="userCtrl.getAllUsers()">
           All Users
         </button>
+      </div>
+
+      <br>
+      <div class="links">
+        <form class='photoUpload' method="post" enctype="multipart/form-data" action="http://localhost:3050/picture/upload">
+          <input class='form-control' type="text" name="caption" placeholder="Caption"/>
+          <input class='form-control' type="file" name="thumbnail"/>
+          <button class="col-xs-12" type='submit'> Upload Picture</button>
+        </form>
+        <br>
+      </div>
+
+      <br>
+      <!-- <div class="links">
+        <form class='form-signin'>
+          <input class='form-control' type="text" name="title" placeholder="Conversation Title">
+          <input class='form-control' type="text" name="input" placeholder="Message">
+          <input class='form-control' type="text" name="recipients", placeholder="Recipient">
+
+          <div>
+            People:
+            <div ng-repeat="person in messageCtrl.people">
+                {{person}}
+            </div>
+          </div>
+          <form name="newPersonForm" class="newTripForm">
+            <input type='text' ng-model="messageCtrl.person" name='person' placeholder='Add Person'/>
+            <button type='submit' ng-click="tripCtrl.findPerson()"> Add Person
+            </button>
+          </form>
+
+          <button class='btn btn-lg btn-primary btn-block', type='submit'>Send Message</button>
+        </form>
+      </div> -->
+      <div class="links">
         <button class="links" type='submit' ng-click="userCtrl.logout()">
           Logout
         </button>
       </div>
-
-
-      <div class="links">
-        <form class='photoUpload' method="post" enctype="multipart/form-data" action="http://localhost:3050/picture/upload">
-          <input class='form-control' type="file" name="thumbnail"/>
-          <button class="col-xs-12" type='submit'> Upload Picture</button>
-        </form>
-      </div>
-
 
 <!-- <div ng-controller="pictureController as pictureCtrl" class="row links">
   <form class='photoUpload' name="uploadPictureForm" novalidate>

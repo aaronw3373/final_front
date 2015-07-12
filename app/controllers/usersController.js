@@ -11,7 +11,9 @@
     this.getUser = function(username){
       usersFactory.getUser(username);
     }
-
+    this.newFollow = function(username){
+      usersFactory.newFollow(username);
+    }
   };
 
  usersController.$inject = ['usersFactory', 'appSettings','userFactory'];

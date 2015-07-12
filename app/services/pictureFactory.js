@@ -28,19 +28,19 @@
       });
     }
 
-    factory.createPicture = function(picture) {
-      console.log(picture);
-      var file = picture.image;
-      return $upload.upload({
-          url: 'http://localhost:3050/picture/upload',
-          method: 'POST',
-          fields: { 'picture[caption]': picture.caption },
-          file: file,
-          fileFormDataName: 'picture[image]'
-      }).then(function(response){
-        console.log(response);
-      });
-    }
+    // factory.createPicture = function(picture) {
+    //   console.log(picture);
+    //   var file = picture.image;
+    //   return $upload.upload({
+    //       url: 'http://localhost:3050/picture/upload',
+    //       method: 'POST',
+    //       fields: { 'picture[caption]': picture.caption },
+    //       file: file,
+    //       fileFormDataName: 'picture[image]'
+    //   }).then(function(response){
+    //     console.log(response);
+    //   });
+    // }
 
     return factory;
   };

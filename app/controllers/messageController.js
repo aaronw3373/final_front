@@ -3,6 +3,8 @@
   var messageController = function(messageFactory, appSettings){
     this.message = messageFactory.message;
     this.messages = messageFactory.messages;
+    this.person = undefined;
+    this.people = messageFactory.newConvoPeople;
     this.display = function(){
       return messageFactory.display;
     }
@@ -10,6 +12,11 @@
     this.getMessage = function(message){
       messageFactory.getMessage(message);
     }
+    this.findPerson = function(){
+      if (this.person){
+        messageFactory.findPerson(this.person);
+      }
+    };
 
   };
 

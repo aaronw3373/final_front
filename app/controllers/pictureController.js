@@ -15,9 +15,9 @@
     this.makeProfilePicture = function(src){
       pictureFactory.makeProfilePicture(src);
     }
-    this.createPicture = function(picture) {
-      pictureFactory.createPicture(picture);
-    };
+    // this.createPicture = function(picture) {
+    //   pictureFactory.createPicture(picture);
+    // };
   };
 
  pictureController.$inject = ['pictureFactory', 'appSettings'];

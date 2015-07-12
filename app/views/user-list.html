@@ -5,6 +5,7 @@
       <div class="row">
         <img class="users_profile_image" ng-src="https://s3.amazonaws.com/powplanner/{{usersCtrl.user.otherUser.profilePicture}}"/>
         <h2>{{usersCtrl.user.otherUser.fullName}}</h2>
+        <button id="follow_button" ng-click="usersCtrl.newFollow(usersCtrl.user.otherUser.username)">Follow</button>
       </div>
       <div class="row">
         <div class="col-xs-12" ng-repeat="status in usersCtrl.user.statuses">

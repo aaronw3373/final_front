@@ -63,6 +63,19 @@
       });
     };
 
+    factory.newFollow = function(username){
+      var url = appSettings.url + '/user/follow/' + username;
+      return $http.post(url).success(function(res){
+        if (res.message === "unAuthenticated"){
+           $location.path('/');
+        } else {
+          console.log(res);
+          factory.display = "displayInline";
+        }
+      }).error(function(err){
+          $location.path('/');
+      });
+    }
     return factory;
   };
 
