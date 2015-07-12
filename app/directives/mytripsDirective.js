@@ -4,7 +4,7 @@
 
     return {
       restrict: 'E',
-      templateUrl: 'app/views/myTrips.html',
+      templateUrl: 'app/views/trips.html',
       controller: 'tripController',
       controllerAs: 'tripCtrl',
       bindToController: true,

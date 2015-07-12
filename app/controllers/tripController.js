@@ -3,6 +3,7 @@
   var tripController = function(tripFactory, appSettings){
     this.trips = tripFactory.trips;
     this.trip = tripFactory.trip;
+    this.sortBy = "startDate";
     this.newTrip = {};
     this.newTrip.title = undefined;
     this.newTrip.info = undefined;
@@ -12,6 +13,11 @@
     this.newTrip.people = tripFactory.newTripPeople;
     this.person = undefined;
     this.message = undefined;
+
+    this.doSort = function(propName){
+      this.sortBy = propName;
+    };
+
     this.displayTrip = function(){
       return tripFactory.displayTrip;
     }

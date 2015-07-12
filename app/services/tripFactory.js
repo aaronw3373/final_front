@@ -14,8 +14,8 @@
       factory.displayTrip = "displayInline";
     }
 
-    factory.getTrips = function(){
-      var url = appSettings.url + '/trip/all';
+    factory.getMyTrips = function(){
+      var url = appSettings.url + '/trip/my';
       return  $http.get(url).success(function(res){
         if (res.message === "unAuthenticated"){
            $location.path('/');
@@ -29,6 +29,20 @@
       });
     };
 
+    factory.getAllTrips = function(){
+      var url = appSettings.url + '/trip/all';
+      return  $http.get(url).success(function(res){
+        if (res.message === "unAuthenticated"){
+           $location.path('/');
+        } else {
+          angular.copy(res, factory.trips);
+          factory.displayTrip = "displayNone";
+          factory.displayTrips = "displayInline";
+        }
+      }).error(function(err){
+          $location.path('/');
+      });
+    };
 
     factory.getTrip = function(id){
       factory.trips.forEach(function(trip){
