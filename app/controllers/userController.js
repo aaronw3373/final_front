@@ -1,19 +1,17 @@
 (function userControllerIIFE(){
 
-  var userController = function(userFactory, appSettings, usersFactory, tripFactory, messageFactory, pictureFactory, settingsFactory){
+  var userController = function(userFactory, appSettings, usersFactory, tripFactory,pictureFactory, settingsFactory){
     this.user = userFactory.user;
 
 
     function init(){
       userFactory.getUser();
+      tripFactory.findAwesome();
     }
     init();
 
     this.showPictures = function(){
       pictureFactory.getPictures();
-    }
-    this.showMessages = function(){
-      messageFactory.getMessages();
     }
     this.getAllUsers = function(){
       usersFactory.getUsers();
@@ -25,20 +23,27 @@
       usersFactory.getFollowers();
     };
 
+
     this.postAwesome = function(){
-      tripFactory.showNew();
+      settingsFactory.hideSettings();
+      tripFactory.showNewTrip();
     }
     this.getMyAwesome = function(){
-      tripFactory.getMyTrips()
+      settingsFactory.hideSettings();
+      tripFactory.getMyAwesome();
     }
     this.findAwesome = function(){
-      tripFactory.findAwesome()
+      settingsFactory.hideSettings();
+      tripFactory.findAwesome();
     }
     this.getRandom = function(){
-      tripFactory.getRandom()
+      settingsFactory.hideSettings();
+      tripFactory.getRandom();
     }
 
+
     this.showSettings = function(){
+      tripFactory.showNone();
       settingsFactory.showSettings();
     }
 
@@ -48,7 +53,7 @@
 
   };
 
- userController.$inject = ['userFactory', 'appSettings', 'usersFactory', 'tripFactory', 'messageFactory', 'pictureFactory','settingsFactory'];
+ userController.$inject = ['userFactory', 'appSettings', 'usersFactory', 'tripFactory', 'pictureFactory','settingsFactory'];
 
  // The Controller is part of the module.
  angular.module('finalApp').controller('userController', userController);

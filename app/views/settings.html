@@ -1,3 +1,15 @@
 <div class="row" ng-class="settingsCtrl.display()">
-  Settings
+  <div class="links">
+    <button class="col-xs-12" type='submit' ng-click="userCtrl.showPictures()">
+      Pictures
+    </button>
+  </div>
+  <div class="links">
+    <form class='photoUpload' method="post" enctype="multipart/form-data" action="http://localhost:3050/picture/upload">
+      <input class='form-control' type="text" name="caption" placeholder="Caption"/>
+      <input class='form-control' type="file" name="thumbnail"/>
+      <button class="col-xs-12" type='submit'> Upload Picture</button>
+    </form>
+    <br>
+  </div>
 </div>

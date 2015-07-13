@@ -24,6 +24,9 @@
     this.displayTrips = function(){
       return tripFactory.displayTrips;
     }
+    this.displayNewTrip = function(){
+      return tripFactory.displayNewTrip;
+    }
 
     this.getTrips = function(){
      tripFactory.getTrips();

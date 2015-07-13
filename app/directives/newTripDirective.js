@@ -1,10 +1,10 @@
-(function tripDirectiveIIFE(){
+(function newTripDirectiveIIFE(){
 
-  var trip = function(){
+  var newTrip = function(){
 
     return {
       restrict: 'E',
-      templateUrl: 'app/views/trip.html',
+      templateUrl: 'app/views/newTrip.html',
       controller: 'tripController',
       controllerAs: 'tripCtrl',
       bindToController: true,
@@ -12,6 +12,6 @@
   }
 
  // The directive is part of the module.
- angular.module('finalApp').directive('trip', trip);
+ angular.module('finalApp').directive('newTrip', newTrip);
 
 })();

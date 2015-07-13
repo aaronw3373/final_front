@@ -1,25 +1,11 @@
 <div class="row" ng-class="tripCtrl.displayTrips()">
   <div class="col-xs-12">
-
-    <div class="row" ng-show="tripCtrl.trip.title">
-        <h1>Title: {{tripCtrl.trip.title}}</h1>
-        <h2>Where: {{tripCtrl.trip.location}}</h2>
-        <h3>Info: {{tripCtrl.trip.info}}</h3>
-        <h2>Start: {{tripCtrl.trip.startDate | date :"MMM d,yyyy 'at' h:mma"}}</h2>
-        <h2>End: {{tripCtrl.trip.endDate | date :"MMM d,yyyy 'at' h:mma"}}</h2>
-        <h2>People: </h2>
-        <div ng-repeat="person in tripCtrl.trip.people">
-            <h3>{{person}}</h3>
-        </div>
-    </div>
-
-    <br>
-    <h1>Trips</h1>
-
+    <div class="row">
         <h2 class="col-xs-3">Sort By:</h2>
         <h3 class="col-xs-3" ng-click="tripCtrl.doSort('startDate')">Start Date </h3>
         <h3 class="col-xs-3" ng-click="tripCtrl.doSort('endDate')">End Date </h3>
         <h3 class="col-xs-3" ng-click="tripCtrl.doSort('title')">Title </h3>
+    </div>
     <div class="row">
         <div class="trips row" ng-repeat="trip in  tripCtrl.trips| filter:tripFilter | orderBy:tripCtrl.sortBy">
             <div ng-click="tripCtrl.getTrip(trip._id)">

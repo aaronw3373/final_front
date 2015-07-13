@@ -7,12 +7,31 @@
     factory.trip = {};
     factory.newTripPeople = [];
     factory.displayTrip = "displayNone";
-    factory.displayTrips = "displayNone";
+    factory.displayTrips = "displayInline";
+    factory.displayNewTrip = "displayNone";
 
-    factory.showNew = function(){
+    factory.showNewTrip = function(){
+      factory.displayTrip = "displayNone";
       factory.displayTrips = "displayNone";
-      factory.displayTrip = "displayInline";
+      factory.displayNewTrip = "displayInline";
     }
+    factory.showTrip = function(){
+      factory.displayTrip = "displayInline";
+      factory.displayTrips = "displayNone";
+      factory.displayNewTrip = "displayNone";
+    }
+    factory.showTrips = function(){
+      factory.displayTrip = "displayNone";
+      factory.displayTrips = "displayInline";
+      factory.displayNewTrip = "displayNone";
+    }
+
+    factory.showNone = function(){
+      factory.displayTrip = "displayNone";
+      factory.displayTrips = "displayNone";
+      factory.displayNewTrip = "displayNone";
+    }
+
 
     factory.getMyAwesome = function(){
       var url = appSettings.url + '/trip/my';
@@ -21,8 +40,7 @@
            $location.path('/');
         } else {
           angular.copy(res, factory.trips);
-          factory.displayTrip = "displayNone";
-          factory.displayTrips = "displayInline";
+          factory.showTrips();
         }
       }).error(function(err){
           $location.path('/');
@@ -36,8 +54,21 @@
            $location.path('/');
         } else {
           angular.copy(res, factory.trips);
-          factory.displayTrip = "displayNone";
-          factory.displayTrips = "displayInline";
+          factory.showTrips();
+        }
+      }).error(function(err){
+          $location.path('/');
+      });
+    };
+
+    factory.getRandom = function(){
+      var url = appSettings.url + '/trip/random';
+      return  $http.get(url).success(function(res){
+        if (res.message === "unAuthenticated"){
+           $location.path('/');
+        } else {
+          angular.copy(res, factory.trip);
+          factory.showTrip();
         }
       }).error(function(err){
           $location.path('/');
@@ -45,9 +76,11 @@
     };
 
     factory.getTrip = function(id){
+      console.log(id);
       factory.trips.forEach(function(trip){
         if(trip._id === id){
           angular.copy(trip, factory.trip);
+          factory.showTrip();
         }
       })
     };

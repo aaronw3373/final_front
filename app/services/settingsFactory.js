@@ -7,6 +7,9 @@
     factory.showSettings = function(){
       factory.display = "displayInline";
     }
+    factory.hideSettings = function(){
+      factory.display = "displayNone";
+    }
     return factory;
   };
 
