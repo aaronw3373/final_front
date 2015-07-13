@@ -1,10 +1,15 @@
 body{
   background-color: #00cccc;
+  min-width: 850px;
 }
 .container, .row{
   margin: 0;
   padding: 0;
   width: 100%;
+}
+.landing{
+  height: 100vh;
+  background-image:
 }
 
 
@@ -40,13 +45,13 @@ body{
 
 .user_sidebar{
   float: left;
-  width: 300px;
+  width: 340px;
   padding: 20px;
 }
 .content_container{
-  float: right;
+  float: left;
   padding: 20px;
-  width: calc(100vw - 340px);
+  width: calc(100vw - 360px);
 }
 /*Profile styles*/
 .profile_square{
@@ -54,11 +59,11 @@ body{
   width: 300px;
 }
 .picture_overlay{
-  padding-top: 209px;
+  padding-top: 200px;
 }
 .picture_overlay ul{
   background-color:rgba(0, 0, 0, 0.6);
-  height: 81px;
+  height: 90px;
   padding: 0;
   margin-bottom:0;
 }
@@ -77,7 +82,7 @@ body{
 .picture_overlay .pad_left{
   padding: 0;
   padding-left: 10px;
-  font-size: 24px;
+  font-size: 20px;
 }
 .picture_overlay .pad_right button{
   font-size: 40px;
@@ -127,7 +132,7 @@ body{
   padding:10px;
   background-color:rgba(0, 0, 0, 0.6);
   border: 0;
-  font-size: 17px;
+  font-size: 20px;
   color: white;
 }
 
@@ -163,7 +168,23 @@ body{
 
 
 .newTripForm{
-  font-size: 18px;
+  font-size: 22px;
+  width: 100%;
+
+}
+.newTripForm .form{
+  width: 100%;
+  padding:5px;
+}
+.newTripForm .date{
+  float: right;
+}
+.newTripForm .date input{
+  width: 300px;
+  margin:5px;
+}
+.catagories{
+  font-size: 20px;
 }
 .trips{
   padding:10px;

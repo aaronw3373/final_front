@@ -24,15 +24,20 @@
     this.getFollowers = function(){
       usersFactory.getFollowers();
     };
-    this.postNewTrip = function(){
-      tripFactory.show();
+
+    this.postAwesome = function(){
+      tripFactory.showNew();
     }
-    this.getMyTrips = function(){
+    this.getMyAwesome = function(){
       tripFactory.getMyTrips()
     }
-    this.getTrips = function(){
-      tripFactory.getAllTrips()
+    this.findAwesome = function(){
+      tripFactory.findAwesome()
     }
+    this.getRandom = function(){
+      tripFactory.getRandom()
+    }
+
     this.showSettings = function(){
       settingsFactory.showSettings();
     }

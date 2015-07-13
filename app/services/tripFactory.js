@@ -9,12 +9,12 @@
     factory.displayTrip = "displayNone";
     factory.displayTrips = "displayNone";
 
-    factory.show = function(){
+    factory.showNew = function(){
       factory.displayTrips = "displayNone";
       factory.displayTrip = "displayInline";
     }
 
-    factory.getMyTrips = function(){
+    factory.getMyAwesome = function(){
       var url = appSettings.url + '/trip/my';
       return  $http.get(url).success(function(res){
         if (res.message === "unAuthenticated"){
@@ -29,7 +29,7 @@
       });
     };
 
-    factory.getAllTrips = function(){
+    factory.findAwesome = function(){
       var url = appSettings.url + '/trip/all';
       return  $http.get(url).success(function(res){
         if (res.message === "unAuthenticated"){
