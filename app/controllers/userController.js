@@ -6,13 +6,10 @@
 
     function init(){
       userFactory.getUser();
-      tripFactory.findAwesome();
+      tripFactory.makeSearch({});
     }
     init();
 
-    this.showPictures = function(){
-      pictureFactory.getPictures();
-    }
     this.getAllUsers = function(){
       usersFactory.getUsers();
     };
@@ -23,26 +20,34 @@
       usersFactory.getFollowers();
     };
 
-
+    this.showPictures = function(){
+      pictureFactory.hide();
+      settingsFactory.hideSettings();
+      tripFactory.showNone();
+      pictureFactory.getPictures();
+    }
     this.postAwesome = function(){
+      pictureFactory.hide();
       settingsFactory.hideSettings();
       tripFactory.showNewTrip();
     }
     this.getMyAwesome = function(){
+      pictureFactory.hide();
       settingsFactory.hideSettings();
       tripFactory.getMyAwesome();
     }
     this.findAwesome = function(){
+      pictureFactory.hide();
       settingsFactory.hideSettings();
-      tripFactory.findAwesome();
+      tripFactory.showTrips();
     }
     this.getRandom = function(){
+      pictureFactory.hide();
       settingsFactory.hideSettings();
       tripFactory.getRandom();
     }
-
-
     this.showSettings = function(){
+      pictureFactory.hide();
       tripFactory.showNone();
       settingsFactory.showSettings();
     }

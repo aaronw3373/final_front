@@ -4,6 +4,21 @@
     this.picture = pictureFactory.picture;
     this.pictures = pictureFactory.pictures;
     this.newPic = {};
+    this.newPic.src = undefined;
+    this.sig = pictureFactory.sig;
+    var done = false;
+
+    this.save = function(){
+      if (this.newPic.src && !done){
+        done = true;
+        var data = {
+          src: this.newPic.src,
+          caption: this.newPic.caption
+        }
+        pictureFactory.save(data);
+      }
+    }
+
     this.displayPics = function(){
       return pictureFactory.display;
     }
@@ -15,9 +30,6 @@
     this.makeProfilePicture = function(src){
       pictureFactory.makeProfilePicture(src);
     }
-    // this.createPicture = function(picture) {
-    //   pictureFactory.createPicture(picture);
-    // };
   };
 
  pictureController.$inject = ['pictureFactory', 'appSettings'];

@@ -14,6 +14,14 @@
     this.person = undefined;
     this.message = undefined;
 
+    this.search = {};
+    this.search.title = undefined;
+    this.search.user = undefined;
+
+    this.makeSearch = function(){
+      tripFactory.makeSearch(this.search);
+    }
+
     this.doSort = function(propName){
       this.sortBy = propName;
     };

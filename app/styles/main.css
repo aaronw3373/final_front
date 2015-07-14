@@ -1,6 +1,8 @@
 body{
-  background-color: #00cccc;
-  min-width: 850px;
+  background-color: #ffffff;
+  background-image: url('https://static.pexels.com/photos/6629/mountains-nature-sky-sunny.jpg');
+  background-size: cover;
+  /*min-width: 850px;*/
 }
 .container, .row{
   margin: 0;
@@ -11,8 +13,38 @@ body{
   height: 100vh;
   background-image:;
 }
+.landing input{
+  height: 40px;
+  width: 220px;
+  background-color:rgba(0, 0, 0, 0.6);
+  border: none;
+  font-size: 14pt;
+  padding: 0;
+  margin:0;
+}
+.landing button{
+  padding: 0;
+  margin-right:4px;
+  height: 40px;
+  width: 220px;
+  background-color:rgba(0, 0, 0, 0.6);
+  border: none;
+  font-size: 14pt;
+  color: white;
+}
 
-
+#myCarousel{
+  position:fixed;
+  z-index:-100000;
+  margin:0px;
+  padding:0px;
+  width:100%;
+  height:100vh;
+  background-size:cover;
+}
+form[loginForm]{
+  font-size: 32px;
+}
 
 .fieldValid{
   color: green;
@@ -197,6 +229,14 @@ body{
   border: 0;
   font-size: 17px;
   color: white;
+}
+.trips_cont{
+  height: calc(100vh - 220px);
+  overflow: scroll;
+  overflow-x:hidden;
+}
+.trips_inner{
+  overflow: hidden;
 }
 .trips button{
   color: white;

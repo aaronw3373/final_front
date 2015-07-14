@@ -1,5 +1,5 @@
 (function finalAppIIFE(){
-  var app = angular.module('finalApp', ['ngRoute']);
+  var app = angular.module('finalApp', ['ngRoute', 'ngSanitize', 'ngS3upload']);
 
   app.config(function($routeProvider){
     $routeProvider
@@ -27,6 +27,8 @@
       .otherwise({redirectTo: '/'});
   }).config(['$httpProvider', function($httpProvider){
     $httpProvider.defaults.withCredentials = true;
-  }]);
+  }]).config(function(ngS3Config) {
+  ngS3Config.theme = 'bootstrap3';
+});
 
 })();

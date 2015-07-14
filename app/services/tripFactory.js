@@ -47,20 +47,6 @@
       });
     };
 
-    factory.findAwesome = function(){
-      var url = appSettings.url + '/trip/all';
-      return  $http.get(url).success(function(res){
-        if (res.message === "unAuthenticated"){
-           $location.path('/');
-        } else {
-          angular.copy(res, factory.trips);
-          factory.showTrips();
-        }
-      }).error(function(err){
-          $location.path('/');
-      });
-    };
-
     factory.getRandom = function(){
       var url = appSettings.url + '/trip/random';
       return  $http.get(url).success(function(res){
@@ -76,7 +62,6 @@
     };
 
     factory.getTrip = function(id){
-      console.log(id);
       factory.trips.forEach(function(trip){
         if(trip._id === id){
           angular.copy(trip, factory.trip);
@@ -114,14 +99,27 @@
            $location.path('/');
         } else {
           angular.copy(res, factory.trip);
-          factory.displayTrip = "displayNone";
-          factory.displayTrips = "displayInline";
+          factory.showTrip();
         }
       }).error(function(err){
           $location.path('/');
       });
 
     };
+
+    factory.makeSearch = function(search){
+      var url = appSettings.url + "/trip/search"
+      return $http.post(url, search).success(function(res){
+        if (res.message === "unAuthenticated"){
+           $location.path('/');
+        } else {
+          angular.copy(res, factory.trips);
+          factory.showTrips();
+        }
+      }).error(function(err){
+          $location.path('/');
+      });
+    }
 
     return factory;
   };

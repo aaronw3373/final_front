@@ -7,7 +7,14 @@
     factory.pictures = [];
     factory.picture = {};
     factory.display = "displayNone";
+    factory.sig = {};
 
+    factory.show = function(){
+      factory.display = "displayInline";
+    }
+    factory.hide = function(){
+      factory.display = "displayNone";
+    }
     factory.getPicture = function(picture){
       angular.copy(picture, factory.picture);
     };
@@ -18,29 +25,29 @@
         factory.display = "displayInline";
         angular.copy(res, factory.pictures);
         angular.copy(factory.pictures[(Math.floor(Math.random() * (factory.pictures.length)))], factory.picture)
+        factory.show();
       });
     };
 
     factory.makeProfilePicture = function(src){
-      var url = appSettings.url + '/user/makeProfilePicture/' + src;
-      return $http.get(url).success(function(res){
+      var url = appSettings.url + '/user/makeProfilePicture';
+      var data = {src: src}
+      return $http.post(url, data).success(function(res){
         $window.location.reload();
       });
     }
-
-    // factory.createPicture = function(picture) {
-    //   console.log(picture);
-    //   var file = picture.image;
-    //   return $upload.upload({
-    //       url: 'http://localhost:3050/picture/upload',
-    //       method: 'POST',
-    //       fields: { 'picture[caption]': picture.caption },
-    //       file: file,
-    //       fileFormDataName: 'picture[image]'
-    //   }).then(function(response){
-    //     console.log(response);
-    //   });
-    // }
+    factory.save = function(data){
+      var url = appSettings.url + '/picture/save';
+      return $http.post(url, data).success(function(res){
+        if (res.message === "unAuthenticated"){
+           $location.path('/');
+        } else {
+          factory.getPictures();
+        }
+      }).error(function(err){
+          $location.path('/');
+      });
+    }
 
     return factory;
   };

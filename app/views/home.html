@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container home_container">
   <div class="row">
     <div class="col-xs-12 col-sm-4">
       <h1 ng-click="userCtrl.getRandom()">Random Awesome</h1>
@@ -10,26 +10,23 @@
       <h1 ng-click="userCtrl.postAwesome()">Post Awesome</h1>
     </div>
   </div>
-</div>
+<!-- </div> -->
 
-<div class="container">
+<!-- <div class="container"> -->
   <div class="row">
     <div class="content_container">
       <new-trip></new-trip>
       <trip></trip>
       <trips></trips>
-      <settings></settings>
-      <!--
-      <user-list></user-list>
       <picture-list></picture-list>
-      <messages></messages>
-      -->
-
+      <settings></settings>
+      <!-- <user-list></user-list>
+      <messages></messages> -->
     </div>
     <div class="user_sidebar">
       <div class="profile_square">
         <div>
-          <img class="profile_image" ng-src="https://s3.amazonaws.com/powplanner/{{userCtrl.user.profilePicture}}"
+          <img class="profile_image" ng-src="{{userCtrl.user.profilePicture}}"
           />
           <div class="picture_overlay">
             <div class="col-xs-6 pad_left">
@@ -60,6 +57,11 @@
             </div>
           </div>
         </div>
+      </div>
+      <div class="links">
+        <button class="links" type='submit' ng-click="userCtrl.showPictures()">
+          Pictures
+        </button>
       </div>
       <div class="links">
         <button class="links" type='submit' ng-click="userCtrl.logout()">

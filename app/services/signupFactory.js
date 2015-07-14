@@ -6,7 +6,7 @@
     factory.postsignup = function(data){
       var url = appSettings.url + '/auth/signup';
       return  $http.post(url, data).success(function(res){
-        $location.path('/');
+        $location.path('/home');
       });
     };
 

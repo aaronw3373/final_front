@@ -5,6 +5,8 @@
     "angular": "1.4",
     "angular-route": "~1.4.1",
     "bootstrap": "~3.3.5",
-    "ng-flow": "~2"
+    "ng-flow": "~2",
+    "ng-s3upload": "~0.1.2",
+    "ngSanitize": "~0.0.2"
   }
 }

@@ -1,11 +1,22 @@
 <div class="row" ng-class="pictureCtrl.displayPics()">
 
   <div class="pictureOuterContainer text-center">
-      <img class="pictureInnerContainer" ng-src="https://s3.amazonaws.com/powplanner/{{pictureCtrl.picture.src}}" />
+      <img class="pictureInnerContainer" ng-src="{{pictureCtrl.picture.src}}" />
       <h2>{{pictureCtrl.picture._creator}}</h2>
       <h2>{{pictureCtrl.picture.postedAt | date}}</h2>
       <button type="submit" ng-click="pictureCtrl.makeProfilePicture(pictureCtrl.picture.src)">Make Profile Picture</button>
 
+  </div>
+
+  <div s3-upload bucket="'powplanner'" ng-model="pictureCtrl.newPic.src"
+    s3-upload-options="{getOptionsUri: 'http://localhost:3050/picture/s3access'}">
+  </div>
+
+  <div ng-show="pictureCtrl.newPic.src">
+    <input type="text" name="caption" ng-model="pictureCtrl.newPic.caption" placeholder="Caption"/>
+    <button ng-click="pictureCtrl.save()">
+    Save
+    </button>
   </div>
 
   <br>
@@ -13,7 +24,7 @@
   <div class="picturesContainer">
     <div ng-repeat="picture in pictureCtrl.pictures">
       <div class="col-xs-12 col-sm-6 picturesOuterContainer">
-        <img class="picturesInnerContainer" ng-click="pictureCtrl.getPicture(picture)"ng-src="https://s3.amazonaws.com/powplanner/{{picture.src}}" />
+        <img class="picturesInnerContainer" ng-click="pictureCtrl.getPicture(picture)"ng-src="{{picture.src}}" />
       </div>
     </div>
   </div>
