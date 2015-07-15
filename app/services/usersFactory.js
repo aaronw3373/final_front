@@ -19,7 +19,7 @@
 
     factory.getUsers = function(){
       var url = appSettings.url + '/user/';
-      return  $http.get(url).success(function(res)
+      return $http.get(url).success(function(res){
           angular.copy(res, factory.users);
           factory.display = "displayInline";
       }).error(function(err){
