@@ -13,6 +13,17 @@
     this.newTrip.people = tripFactory.newTripPeople;
     this.person = undefined;
     this.message = undefined;
+    this.noEdit = function(){return tripFactory.noEdit};
+    this.edit = function(){return tripFactory.edit};
+    this.updateTrip =function(){
+      tripFactory.updateTrip(this.newTrip);
+    }
+    this.showEdit = function(){
+      tripFactory.showEdit();
+    }
+    this.showNoEdit = function(){
+      tripFactory.showNoEdit();
+    }
 
     this.search = {};
     this.search.title = undefined;

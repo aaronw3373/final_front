@@ -10,12 +10,8 @@
     factory.getUser = function(username){
       var url = appSettings.url + '/user/' + username;
       return  $http.get(url).success(function(res){
-        if (res.message === "unAuthenticated"){
-           $location.path('/');
-        } else {
           angular.copy(res, factory.user);
           factory.display = "displayInline";
-        }
       }).error(function(err){
           $location.path('/');
       });
@@ -23,13 +19,9 @@
 
     factory.getUsers = function(){
       var url = appSettings.url + '/user/';
-      return  $http.get(url).success(function(res){
-        if (res.message === "unAuthenticated"){
-           $location.path('/');
-        } else {
+      return  $http.get(url).success(function(res)
           angular.copy(res, factory.users);
           factory.display = "displayInline";
-        }
       }).error(function(err){
           $location.path('/');
       });
@@ -38,12 +30,8 @@
     factory.getFriends = function(){
       var url = appSettings.url + '/user/friends';
       return  $http.get(url).success(function(res){
-        if (res.message === "unAuthenticated"){
-           $location.path('/');
-        } else {
           angular.copy(res, factory.users);
           factory.display = "displayInline";
-        }
       }).error(function(err){
           $location.path('/');
       });
@@ -52,12 +40,8 @@
     factory.getFollowers = function(){
       var url = appSettings.url + '/user/followers';
       return  $http.get(url).success(function(res){
-        if (res.message === "unAuthenticated"){
-           $location.path('/');
-        } else {
           angular.copy(res, factory.users);
           factory.display = "displayInline";
-        }
       }).error(function(err){
           $location.path('/');
       });
@@ -66,12 +50,8 @@
     factory.newFollow = function(username){
       var url = appSettings.url + '/user/follow/' + username;
       return $http.post(url).success(function(res){
-        if (res.message === "unAuthenticated"){
-           $location.path('/');
-        } else {
           console.log(res);
           factory.display = "displayInline";
-        }
       }).error(function(err){
           $location.path('/');
       });

@@ -8,11 +8,7 @@
     factory.getUser = function(){
       var url = appSettings.url + '/auth/user';
       return  $http.get(url).success(function(res){
-        if (res.message === "unAuthenticated"){
-           $location.path('/');
-        } else {
           angular.copy(res, factory.user);
-        }
       }).error(function(err){
           $location.path('/');
       });

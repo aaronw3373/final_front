@@ -39,11 +39,7 @@
     factory.save = function(data){
       var url = appSettings.url + '/picture/save';
       return $http.post(url, data).success(function(res){
-        if (res.message === "unAuthenticated"){
-           $location.path('/');
-        } else {
           factory.getPictures();
-        }
       }).error(function(err){
           $location.path('/');
       });

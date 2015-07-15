@@ -1,5 +1,5 @@
 (function finalAppIIFE(){
-  var app = angular.module('finalApp', ['ngRoute', 'ngSanitize', 'ngS3upload']);
+  var app = angular.module('finalApp', ['ngRoute', 'ngSanitize', 'ngS3upload','ngFileUpload']);
 
   app.config(function($routeProvider){
     $routeProvider
